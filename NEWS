@@ -1,13 +1,67 @@
 PHP                                                                        NEWS
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-?? ??? 2013, PHP 5.5.0 Release Candidate 2
+?? ??? 2013, PHP 5.5.0 Release Candidate 3
+
+-FPM:
+  . Fixed Bug #64915 (error_log ignored when daemonize=0). (Remi)
+
+- GD:
+  . Fixed Bug #64961 (segfault in imagesetinterpolation). (Remi)
+  . Fixed Bug #64962 (imagerotate produces corrupted image). (Remi)
+
+- Hash:
+  . Fixed Bug #64745 (hash_pbkdf2() truncates data when using default length
+    and hex output). (Anthony Ferrara)
+
+- PDO_DBlib:
+  . Fixed bug #63638 (Cannot connect to SQL Server 2008 with PDO dblib).
+    (Stanley Sufficool)
+  . Fixed bug #64338 (pdo_dblib can't connect to Azure SQL). (Stanley
+    Sufficool)
+  . Fixed bug #64808 (FreeTDS PDO getColumnMeta on a prepared but not executed
+    statement crashes). (Stanley Sufficool)
+
+- PDO_pgsql:
+  . Fixed Bug #64949 (Buffer overflow in _pdo_pgsql_error). (Remi)
+
+
+23 May 2013, PHP 5.5.0 Release Candidate 2
+
+- Core:
+  . Fixed bug #64660 (Segfault on memory exhaustion within function definition).
+    (Stas, reported by Juha Kylmänen)
+  . Fixed bug #64720 (SegFault on zend_deactivate). (Dmitry)
+  . Fixed bug #64853 (Use of no longer available ini directives causes crash
+    on TS build). (Anatol)
+
+- Calendar:
+  . Fixed bug #64895 (Integer overflow in SndToJewish). (Remi)
+
+- Fileinfo:
+  . Fixed bug #64830 (mimetype detection segfaults on mp3 file). (Anatol)
+
+- FPM:
+  . Add --with-fpm-systemd option to report health to systemd, and
+    systemd_interval option to configure this. The service can now use
+    Type=notify in the systemd unit file. (Remi)
 
 - mbstring:
   . Fixed bug #64769 (mbstring PHPTs crash on Windows x64). (Anatol)
 
+- mysqli:
+  . Fixed bug #64394 (MYSQL_OPT_CAN_HANDLE_EXPIRED_PASSWORDS undeclared when
+    using Connector/C). (Andrey)
+
 - Sockets:
   . Fixed bug #64508 (Fails to build with --disable-ipv6). (Gustavo)
 
+- Zend Engine:
+  . Fixed bug #64821 (Custom Exceptions crash when internal properties overridden).
+      (Anatol)
+
+- DateTime
+  . Fixed bug #64825 (Invalid free when unserializing DateTimeZone).
+    (Anatol)
 
 09 May 2013, PHP 5.5.0 Release Candidate 1
 
